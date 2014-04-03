@@ -1,6 +1,8 @@
 Revision history for Template-Plugin-Gravatar
-Thu Apr  3 12:57:04 PDT 2014
+0.07  Thu Apr  3 12:57:04 PDT 2014
       - Moved to github.
+      - https://rt.cpan.org/Public/Bug/Display.html?id=93542 - up size
+        limit and take the border out of the tests.
 
 0.06  Thu Oct 15 16:20:42 PDT 2009 
       - Downcased a couple of \Zs.
