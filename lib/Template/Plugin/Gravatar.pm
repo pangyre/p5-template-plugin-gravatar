@@ -6,7 +6,7 @@ use Carp qw( carp croak );
 use URI ();
 use Digest::MD5 ();
 
-our $VERSION = "0.08";
+our $VERSION = "0.09";
 our $AUTHORITY = "cpan:ASHLEY";
 our $Gravatar_Base = "http://www.gravatar.com/avatar/";
 
@@ -46,7 +46,7 @@ sub new {
         
         $args->{gravatar_id} = Digest::MD5::md5_hex($args->{email});
 
-        my $uri = URI->new($Gravatar_Base);
+        my $uri = URI->new( $args->{base} || $Gravatar_Base );
         my @ordered = map { $_, $args->{$_} }
             grep $args->{$_},
             qw( gravatar_id rating size default );
