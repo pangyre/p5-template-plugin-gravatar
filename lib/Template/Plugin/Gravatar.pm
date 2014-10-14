@@ -6,7 +6,7 @@ use Carp qw( carp croak );
 use URI ();
 use Digest::MD5 ();
 
-our $VERSION = "0.09";
+our $VERSION = "0.08";
 our $AUTHORITY = "cpan:ASHLEY";
 our $Gravatar_Base = "http://www.gravatar.com/avatar/";
 
