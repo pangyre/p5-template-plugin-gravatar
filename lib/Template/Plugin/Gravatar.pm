@@ -44,7 +44,13 @@ sub new {
             carp "Border is deprecated! Dropping it.";
         }
         
-        $args->{gravatar_id} = Digest::MD5::md5_hex($args->{email});
+        my $email = $args->{email};
+        # Trim leading and trailing whitespace from an email address
+        $email =~ s/^\s+|\s+$//g;
+        # Force all characters to lower-case
+        $email = lc $email;
+        # md5 hash the final string
+        $args->{gravatar_id} = Digest::MD5::md5_hex($email);
 
         my $uri = URI->new( $args->{base} || $Gravatar_Base );
         my @ordered = map { $_, $args->{$_} }
